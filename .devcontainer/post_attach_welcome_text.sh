@@ -3,20 +3,19 @@ set -e
 
 clear
 
-echo "  ⚙️ Setup testnet: stellar network use testnet"
+echo " WELCOME TO THE ink! AND POP CLI DEVCONTAINER"
 echo ""
-echo "  🆔 Configure an Identity:"
-echo "     stellar keys generate --global alice --network testnet --fund"
-echo "     stellar keys address alice && stellar keys use alice"
+echo "  ⚙️ Pop CLI Help: pop --help"
 echo ""
-echo "  🛠️ Build a contract: stellar contract build"
+echo "  🔨 Create new Contract:"
+echo "     pop new contract helloink -t standard"
 echo ""
-echo "  📖 Stellar CLI Manual(cmd+click) 🔗 https://developers.stellar.org/docs/tools/cli/stellar-cli"
-echo "  👩‍🔬 Stellar Lab(cmd+click) 🔗 https://lab.stellar.org/"
+echo "  🛠️ Build a contract: pop build --release"
 echo ""
-echo "  OpenZeppelin Contracts"
-echo "  Join our Discord:  https://discord.gg/stellardev"
-echo "  Stella: AI chat bot for stellar dev questions https://discord.com/channels/897514728459468821/1265827786111586344"
+echo "  📖 Pop CLI Manual(cmd+click) 🔗 https://learn.onpop.io/"
+echo "  👩‍🔬 PAPI Console(cmd+click) 🔗 https://dev.papi.how/explorer"
+echo ""
+echo "  Join our Discord:  https://polkadot-discord.w3f.tools/"
 echo "  CLI GitHub AI Copilot:  gh copilot --help"
 
 

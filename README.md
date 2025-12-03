@@ -1,32 +1,11 @@
-# Arbitrage Apes Open Zeppelin Soroban Smart Contract
+# Arbitrage Apes ink! Smart Contracts
 
-- [Click here to create your contract](https://wizard.openzeppelin.com/stellar#)
-- Open Zeppelin Repos:  https://github.com/OpenZeppelin/stellar-contracts
-- Review the Audit Reports here:  https://github.com/OpenZeppelin/stellar-contracts/tree/main/audits
+ink! smart contracts powered by Polkadot Dev Tools
+like the **Pop CLI** and the **PAPI SDK**
 
-Fully Audited Open Zeppelin NFT Contracts now on ✨ [Stellar Network](https://developers.stellar.org/)
-with [smart wallets](https://developers.stellar.org/docs/build/apps/smart-wallets)
-powered by Stellar Dev Tools
-like the **Stellar CLI** and the **Stellar Javascript SDK**
+## ✨ Polkadot ink! Smart Contract Arbitrage Apes Demo
 
-Audited smart contracts add another layer of security and safety to the Soroban ecosystem which is already built 
-from the ground up with a security mindset.
-
-Built with the new Open Zeppelin Wizard ✅
-
-## ✨ Stellar Smart Contract Arbitrage Apes Demo
-
-Open Zeppelin based NFT `NonFungibleBurnable` for token gating access to APIs including OZ Monitor.
-
-```json
-{
-  "base_uri": "www.arbitrage-apes.xyz",
-  "name": "Arbitrage Ape Yacht Club",
-  "symbol": "AAYC"
-}
-
-```
-**Path:** `contracts/arbitrage-apes`
+TODO
 
 
 **Next Step:** Choose Devcontainers or Local Setup
@@ -52,25 +31,27 @@ Read the [GitHub Docs](https://docs.github.com/en/codespaces/setting-up-your-pro
 
 ## Local Environment Setup
 
-[Local environment setup](https://developers.stellar.org/docs/build/smart-contracts/getting-started)
-For support, visit our [Discord](https://discord.gg/stellardev)
+TODO
+
+[Local environment setup](https://use.ink/docs/v6/getting-started/setup)
+For support, visit our [Discord](https://polkadot-discord.w3f.tools/)
 
 **Ensure you are in your project root directory**
 ```bash
 echo $PWD
 ```
 Confirm your project root:
-`/Users/LOCAL_USER/workspace/stellar-arbitrage-apes-YOUR-PROJECT`
+`/Users/LOCAL_USER/workspace/polkadot-arbitrage-apes-YOUR-PROJECT`
 `cd` to project root if not
 
 Verify your workspace is configured correctly:
 ```bash
-stellar --version && rustc --version && cargo version && nvm current
+pop --version && rustc --version && cargo version && nvm current
 ```
 [Node/npm setup](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)
 
 **Your project lifecycle will consist of setup, build and deploy and UI setup steps:**
-1. Setup Stellar accounts and env
+1. Setup ink! contract and env
 2. Build Contract
 3. Deploy contract and setup env
 4. Configure contract bindings for UI
@@ -78,11 +59,13 @@ stellar --version && rustc --version && cargo version && nvm current
 **During active development**
 Upgrading your deployed contract
 
-**Next Step:** Setup Stellar accounts and Env
+**Next Step:** Setup ink! contract and env
 
 ---
 
 ## STEP 1: Setup Identity and Env
+
+TODO
 
 - Set CLI to use testnet by default
 - Generate and fund Testnet key
@@ -115,7 +98,7 @@ step1_auto
 step1_print
 ```
 
-**Verify your Stellar Dev Env is setup correctly:**
+**Verify your Polkadot Dev Env is setup correctly:**
 ```bash
 step1_verify
 ```
@@ -155,7 +138,7 @@ step2_auto
 step2_print
 ```
 
-**Verify your Stellar Dev Env is setup correctly:**
+**Verify your Polkadot Dev Env is setup correctly:**
 ```bash
 step2_verify
 ```
@@ -172,7 +155,7 @@ step2_verify
 ## STEP 3: Deploy Contract and Update Env
 
 - Use ARBITRAGE_APES_WASM and SOURCE_ACCOUNT_CLI_NAME and ARBITRAGE_APES_CONTRACT_NAME from .env
-- Use Stellar CLI to deploy contract using .env vars
+- Use Polkadot CLI to deploy contract using .env vars
 - Sets contract alias to ARBITRAGE_APES_CONTRACT_NAME from .env
 - Sets Deployed contract address to DEPLOYED_ARBITRAGE_APES_CONTRACT
 - Sets NFT metadata in your contract
@@ -185,8 +168,8 @@ alias step3_verify="./init/step3_verify.sh"
 The following metadata will be set in your contract:
 ```json
 {
-  "base_uri": "www.stellar-arbitrage-apes.xyz",
-  "name": "Stellar Arbitrage Ape Yacht Club",
+  "base_uri": "www.Polkadot-arbitrage-apes.xyz",
+  "name": "Polkadot Arbitrage Ape Yacht Club",
   "symbol": "SAAYC"
 }
 ```
@@ -205,13 +188,13 @@ step3_print
 ```bash
 step3_verify
 ```
-> - TODO add stellar contract info to verify step
+> - TODO add Polkadot contract info to verify step
 
 ----
 
 ## STEP 4: Generate Contracts Bindings
 - Use the DEPLOYED_ARBITRAGE_APES_CONTRACT and ARBITRAGE_APES_CONTRACT_NAME from .env
-- Use Stellar CLI to generate contract bindings using .env vars
+- Use Polkadot CLI to generate contract bindings using .env vars
 - Sets the output package to ARBITRAGE_APES_CONTRACT_NAME
 - Sets Deployed contract address to DEPLOYED_ARBITRAGE_APES_CONTRACT
 - Sets your launch-tube token in your .env as `ARBITRAGE_APES_LAUNCHTUBE_TOKEN`
@@ -257,17 +240,17 @@ step4_verify
 ----
 
 ## Invoking your Deployed Contract
-Now let's use the Stellar CLI to invoke your deployed contract.
+Now let's use the Pop CLI to invoke your deployed contract.
 
 ### A Reward for your Hard Work: Mint your first Soroban NFT!
 - The id of the deployed contract, our default source account and the public key are stored in our `.env` file
-- We call the `stellar contract invoke` Stellar CLI function here with our `.env` file
+- We call the `Polkadot contract invoke` Polkadot CLI function here with our `.env` file
 - Which will invoke the `mint()` function passing in the Owner public key as the recipient
 - We are passing in the token_id which we will update to be dynamically generated later on
 
 **Execute this command:**
 ```bash
-source .env && stellar contract invoke \
+source .env && Polkadot contract invoke \
     --id $DEPLOYED_ARBITRAGE_APES_CONTRACT \
     --source $SOURCE_ACCOUNT_CLI_NAME \
     -- \
@@ -280,9 +263,9 @@ source .env && stellar contract invoke \
 - The contract contains logic to emit events when important things like `mint()` function invocations occur
 - Events can be used by your dapp, by indexers, by [Open Zeppelin Monitor](https://github.com/OpenZeppelin/openzeppelin-monitor)
 - Events provide a summary of important data from a `mint()` function invocation for instance
-- Check out the [Stellar CLI manual for more info](https://developers.stellar.org/docs/tools/cli/stellar-cli#stellar-events)
+- Check out the [Polkadot CLI manual for more info](https://developers.Polkadot.org/docs/tools/cli/Polkadot-cli#Polkadot-events)
 ```bash
-source .env && stellar events --id $DEPLOYED_ARBITRAGE_APES_CONTRACT \
+source .env && Polkadot events --id $DEPLOYED_ARBITRAGE_APES_CONTRACT \
 --start-ledger 1206843 --output json 
 ```
 > - TODO Capture the first minted transaction ledger to store in .env as START_LEDGER
@@ -316,13 +299,13 @@ Event 0005183355511390208-0000000001 [CONTRACT]:
 }
 ```
 > **TODO:**
-> - TODO Provide utility helper using Stellar CLI for decoding XDR in event
-> - Show how to view/decode events on Stellar lab
+> - TODO Provide utility helper using Polkadot CLI for decoding XDR in event
+> - Show how to view/decode events on Polkadot lab
 
 ## Invoking your Contract with the Javascript SDK
 
-We showed you how to use the Stellar CLI to invoke your contract, now let's do it with the
-[Javascript SDK](https://stellar.github.io/js-stellar-sdk/).
+We showed you how to use the Polkadot CLI to invoke your contract, now let's do it with the
+[Javascript SDK](https://Polkadot.github.io/js-Polkadot-sdk/).
 
 **Parameters:**
 - contract_id (optional) - Deployed contract ID
@@ -338,7 +321,7 @@ pnpx tsx use_contract_bindings.ts [contract_id] [SOURCE_KEYPAIR]
 ### What is an NFT?
 - It's an unique digital assets with verifiable ownership
 - It can represent much more then just an image as we commonly see
-- In this demo, we are using the [Open Zeppelin NFT implementation](https://docs.openzeppelin.com/stellar-contracts/0.2.0/tokens/non-fungible)
+- In this demo, we are using the [Open Zeppelin NFT implementation](https://docs.openzeppelin.com/Polkadot-contracts/0.2.0/tokens/non-fungible)
 - NFTs can represent many different things:
   - **Digital Access:** Access to a API, private site or forum or a set of data
   - **Physical Access:** Access to an event functioning as a unique, verifiable digital ticket
@@ -379,7 +362,7 @@ pnpx tsx use_contract_bindings.ts [contract_id] [SOURCE_KEYPAIR]
 We will now create a backend to provide data for your UI.  We will take a flexible approach to building a dapp
 backend giving your working examples of various way to supply data to your client front-end.
 
-[Indexers](https://developers.stellar.org/docs/data/indexers) extract and transform raw blockchain data and present the data in a format
+[Indexers](https://developers.Polkadot.org/docs/data/indexers) extract and transform raw blockchain data and present the data in a format
 that is more easily consumable by a front-end client.
 
 Indexers are generally provided as 3rd-party services.  The following nest.js service is a `micro-indexer` primarily built to consume
@@ -387,7 +370,7 @@ contract events emitted by your contract and presents them to your front-end cli
 
 **Available Formats:**
 - ✅ Server Sent Events -> https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
-  - http://localhost:3000/api/stellar/mock/event/sse/
+  - http://localhost:3000/api/Polkadot/mock/event/sse/
 - Websocket -> TODO
 - GraphQL -> TODO
 - JSON REST API -> TODO
@@ -403,9 +386,9 @@ git clone git@github.com:anataliocs/arbitrage-apes-backend.git
 ```
 
 **Choose a Testnet RPC Provider**
-- https://developers.stellar.org/docs/data/apis/api-providers#publicly-accessible-apis
+- https://developers.Polkadot.org/docs/data/apis/api-providers#publicly-accessible-apis
 ```dotenv
-STELLAR_RPC_SERVER_URL=https://soroban-testnet.stellar.org
+Polkadot_RPC_SERVER_URL=https://soroban-testnet.Polkadot.org
 ```
 
 **Start locally:**
@@ -424,7 +407,7 @@ pnpm start:dev
 
 **Backend SSE Example**
 - This example uses RxJS to generate a stream of MessageEvents pushed to a front-end client
-- Example stream URL: http://localhost:3000/api/stellar/mock/event/sse/CC6GBNMVYR4SVUDWTIP7KTMGBQF22OJQFTBXHGZKE3LLJPBGIYXIIOL4
+- Example stream URL: http://localhost:3000/api/Polkadot/mock/event/sse/CC6GBNMVYR4SVUDWTIP7KTMGBQF22OJQFTBXHGZKE3LLJPBGIYXIIOL4
 ```
   @Sse('sse/:contractId')
   sse_by_contract_id(
@@ -432,7 +415,7 @@ pnpm start:dev
   ): Observable<MessageEvent> {
     return interval(1000).pipe(
       map(
-        this.stellarMockEventService.transformMessageEventWithContract(
+        this.PolkadotMockEventService.transformMessageEventWithContract(
           contractId,
         ),
       ),
@@ -446,7 +429,7 @@ CORS is setup on the server to allow for http://localhost:63342/ and http://loca
 - Last Resort: You can try opening Chrome in a sandbox with web security disabled:
 - This approach is NOT recommended 
 ```bash
-/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome http://localhost:63342/stellar-arbitrage-apes-future-yacht-club/index.html?_ijt=q9fn6vaje10r5bcfgmcmafoo6p&_ij_reload=RELOAD_ON_SAVE \
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome http://localhost:63342/Polkadot-arbitrage-apes-future-yacht-club/index.html?_ijt=q9fn6vaje10r5bcfgmcmafoo6p&_ij_reload=RELOAD_ON_SAVE \
 --args --disable-web-security --user-data-dir="~/.chrome.dev.session/" --incognito --new-window
 ```
 
@@ -482,98 +465,3 @@ test suite + static analysis with app generation test. 218 github stars.
 - Generates Next.js boilerplate basic UI
 
 ----
-
-## Storing Data
-
-How data is stored is an important consideration!
-
-Learn more about Stellar Smart Contract Storage in the following file:
-`Learning_Stellar_Smart_Contract_Storage.md`
-
-**Storage Key Definition:**
-
-Unique key with which to store or retrieve data.
-
-```
-TODO - Update this section
-```
-
-- [Enums in Rust](https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html) define an enumeration, a limited set
-  of possible values
-- This `enum` defines a single possible variant of `Storage` keys
-- This custom data type acts as a key to look up a stored value
-
-All together, this gives us a unique, named-spaced custom data type to function as a key
-to store and retrieve values from storage.
-
-Using the Data Key in the format `Namespace::Variant(Associated value)`:
-
-```
-TODO
-```
-
-**Storage Value Type Definition:**
-
-Define the interface for storing data.
-
-```
-TODO
-```
-
-- [Structs in Rust](https://doc.rust-lang.org/book/ch05-01-defining-structs.html) define a type with multiple named
-  associated values called **fields**
-- The name of the struct is a type that describes the purpose of the data grouping
-- Each field is defined in the format `name: Type`
-- This struct functions as an interface of key:value pairs that define an atomic piece of data to be stored
-
-> **⚠️ Warning**
->
-> A common mistake is importing the `alloc::string::String` type which will cause
-> you all sorts of issues!
->
-> Make sure you import the `soroban_sdk::{String}` type!
-
-----
-
-#### Storing Soroban Data using the `Env` Interface
-
-How to store data on-chain:
-
-```
-TODO
-```
-
-**Storing data on-chain**
-
-- Your function definition will need to include a reference to the `Env` type
-- The [soroban_sdk::env](https://docs.rs/soroban-sdk/latest/soroban_sdk/struct.Env.html) type provides ways to interact
-  with the execution environment
-	- **TL;DR;** Contracts talk to the Stellar network via the environment interface
-- The `env.storage.temporary().set` function allows for storing data on-chain with a limited lifespan
-	- Data that needs to
-	  be [stored permanantly](https://developers.stellar.org/docs/learn/encyclopedia/storage/persisting-data) should go
-	  into `persistent()` durability
-	- Check out the docs for help on choosing
-	  the [right storage durability](https://developers.stellar.org/docs/learn/encyclopedia/storage/persisting-data#best-practices)
-
----
-
-## Contract Source Validation
-
-Build verification
-
-TODO - `.github/workflows/release.yml`
-
-- https://stellar.expert/explorer/public/contract/validation
-- [Contract Source Validation SEP #1573](https://github.com/orgs/stellar/discussions/1573)
-- https://lab.stellar.org/smart-contracts/contract-explorer
-
-
-----
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://developers.stellar.org/) or jump into
-our [Discord server](https://discord.gg/stellardev).
-
----

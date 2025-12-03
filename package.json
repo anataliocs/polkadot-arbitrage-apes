@@ -18,16 +18,13 @@
     "vite": "^6.3.1"
   },
   "dependencies": {
-    "@stellar/stellar-sdk": "^13.3.0",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
-    "arbitrage-apes": "link:packages/arbitrage-apes",
     "buffer": "^6.0.3",
     "create-next-app": "^15.3.2",
     "dotenv": "^16.4.7",
-    "passkey-kit": "^0.10.24"
   },
   "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
 }
